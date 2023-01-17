@@ -4,7 +4,7 @@ pipeline{
     stages{
         stage("Checkout"){
             steps{
-                checkout scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/SHREYASNAIR129/Diamond_prediction.git']])
+                checkout ($class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/SHREYASNAIR129/Diamond_prediction.git']])
             }
         }
         stage("build"){
@@ -14,17 +14,17 @@ pipeline{
         }
         stage("loading_data"){
             steps{
-                sh 'python dataLoading.py'
+                bat 'python dataLoading.py'
             }
         }
         stage("data_preprocessing"){
             steps{
-                sh 'python dataPreprocessing.py'
+                bat 'python dataPreprocessing.py'
             }
         }
         stage("model_building_and_metrics"){
             steps{
-                sh 'python modelBuilding.py'
+                bat 'python modelBuilding.py'
             }
         }
         
