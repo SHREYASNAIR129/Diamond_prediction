@@ -19,12 +19,12 @@ pipeline{
         }
         stage("data_preprocessing"){
             steps{
-                bat label: '', script: 'python3 dataPreprocessing.py'
+                bat label: '', script: 'python dataPreprocessing.py'
             }
         }
         stage("model_building_and_metrics"){
             steps{
-                bat label: '', script: 'python3 modelBuilding.py'
+                bat label: '', script: 'python modelBuilding.py'
             }
         }
         
