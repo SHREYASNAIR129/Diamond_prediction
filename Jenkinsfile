@@ -10,6 +10,7 @@ pipeline{
         stage("build"){
             steps{
                 git 'https://github.com/SHREYASNAIR129/Diamond_prediction.git'
+            }
         }
         stage("loading_data"){
             steps{
