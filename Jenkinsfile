@@ -4,12 +4,12 @@ pipeline{
     stages{
         stage("Checkout"){
             steps{
-                checkout ($class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/SHREYASNAIR129/Diamond_prediction.git']])
+                checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/SHREYASNAIR129/Diamond_prediction.git']]])
             }
         }
         stage("build"){
             steps{
-                git 'https://github.com/SHREYASNAIR129/Diamond_prediction.git'
+                git branch: 'master', url: 'https://github.com/SHREYASNAIR129/Diamond_prediction.git'
             }
         }
         stage("loading_data"){
@@ -26,12 +26,6 @@ pipeline{
             steps{
                 bat 'python modelBuilding.py'
             }
-        }
-        
-    }
-    post{
-        always{
-            emailext body: '', subject: 'This is the new build', to: 'shreyas.jarvis129@gmail.com'
         }
     }
 }
