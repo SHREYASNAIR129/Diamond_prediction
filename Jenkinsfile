@@ -11,6 +11,7 @@ pipeline{
             steps{
                 git 'https://github.com/SHREYASNAIR129/Diamond_prediction.git'
                 bat label: '', script: 'python3 dataLoading.py'
+            }
         }
     }
 }
