@@ -31,7 +31,7 @@ pipeline{
     }
     post{
         always{
-            emailext body: '', subject: 'This is the new build', to: 'shreyas.nair@cloudangles.com'
+            emailext body: '', subject: 'This is the new build', to: 'shreyas.jarvis129@gmail.com'
         }
     }
 }
