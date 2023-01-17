@@ -19,12 +19,12 @@ pipeline{
         }
         stage("data_preprocessing"){
             steps{
-                sh 'python3 dataPreprocessing.py'
+                bat 'python3 dataPreprocessing.py'
             }
         }
         stage("model_building_and_metrics"){
             steps{
-                sh 'python3 modelBuilding.py'
+                bat 'python3 modelBuilding.py'
             }
         }
         
