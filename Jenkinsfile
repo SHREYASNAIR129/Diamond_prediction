@@ -14,17 +14,17 @@ pipeline{
         }
         stage("loading_data"){
             steps{
-                bat label: '', script: 'python3 dataLoading.py'
+                sh label: '', script: 'python3 dataLoading.py'
             }
         }
         stage("data_preprocessing"){
             steps{
-                bat label: '', script: 'python3 dataPreprocessing.py'
+                sh label: '', script: 'python3 dataPreprocessing.py'
             }
         }
         stage("model_building_and_metrics"){
             steps{
-                bat label: '', script: 'python3 modelBuilding.py'
+                sh label: '', script: 'python3 modelBuilding.py'
             }
         }
     }
